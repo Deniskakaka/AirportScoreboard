@@ -21,8 +21,8 @@ function Head({ text, moveText, moveSearchText }) {
     let location = useLocation().pathname;
 
     return (
-        <header>
-            <span>SEARCH FLIGHT</span>
+        <header className="header">
+            <span className="header__logo">SEARCH FLIGHT</span>
             <div className="search">
                 <input
                     className="header-search__input"
