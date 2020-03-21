@@ -8,8 +8,8 @@ function FlyghtList({ search, time }) {
 
     return (
         <div className="conteyner">
-            {time === undefined ? <span className="conteyner__notChoose">Please choose</span>
-            : time.filter(i => search !== '' ? `${i['carrierID.IATA']}${i.fltNo}` === search : i).length === 0
+            {time !== undefined ? time.filter(i => search !== ''
+                ? `${i['carrierID.IATA']}${i.fltNo}` === search : i).length === 0
                 ? <div className="notFound">Not Found</div>
                 : time.filter(i => search !== '' ? `${i['carrierID.IATA']}${i.fltNo}` === search : i).map(i =>
                     <li className="list" key={i.ID}>
@@ -35,7 +35,7 @@ function FlyghtList({ search, time }) {
                             </div>
                         </span>
                         <span className="list__numberFly">{`${i['carrierID.IATA']}${i.fltNo}`}</span>
-                    </li>)}
+                    </li>) : ''}
         </div>
     )
 }

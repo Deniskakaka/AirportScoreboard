@@ -10,22 +10,22 @@
 	background-color: white;
 }
 
+.notChoose {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+		Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	font-size: 40px;
+	font-weight: 900;
+	line-height: 1.5;
+	color: #212529;
+	height: 300px;
+}
+
 .conteyner {
 	min-width: 1000px;
 	background-color: white;
-
-	&__notChoose {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
-			Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
-		font-size: 40px;
-		font-weight: 900;
-		line-height: 1.5;
-		color: #212529;
-		height: 300px;
-	}
 }
 
 .list {

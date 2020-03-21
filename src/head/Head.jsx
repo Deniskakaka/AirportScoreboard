@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useLocation } from "react-router";
 import { numberFlyght, search } from '../redux/fly.actions.js';
 import { Link } from 'react-router-dom';
+import { functionCreateSearch } from './functionSearch.js';
 import './header.scss';
 import qs from 'qs';
 import moment from 'moment';
@@ -30,7 +31,7 @@ function Head({ text, moveText, moveSearchText }) {
                     value={text} onChange={(event) => moveText(event.target.value)} />
                 <Link to={{
                     pathname: location,
-                    search: text == '' ? `data=${delimited.data}` : unencoded
+                    search: functionCreateSearch(text, delimited.data, unencoded)
                 }}><button
                     className="header-search__button"
                     onClick={() => moveSearchText(text)}>Search</button></Link>
@@ -38,9 +39,7 @@ function Head({ text, moveText, moveSearchText }) {
             <div className="header-navigation">
                 <Link to={{
                     pathname: "/departures",
-                    search: text == '' ? `data=${delimited.data !== undefined
-                        ? delimited.data : moment().format('DD-MM-YYYY')}`
-                        : unencoded
+                    search: functionCreateSearch(text, delimited.data, unencoded)
                 }}><button
                     className={location === '/departures'
                         ? "header-navigation__departures white"
@@ -49,20 +48,16 @@ function Head({ text, moveText, moveSearchText }) {
                     </button></Link>
                 <Link to={{
                     pathname: "/arrivels",
-                    search: text == '' ? `data=${delimited.data !== undefined
-                        ? delimited.data : moment().format('DD-MM-YYYY')}`
-                        : unencoded
+                    search: functionCreateSearch(text, delimited.data, unencoded)
                 }}><button
                     className={location === '/arrivels'
                         ? "header-navigation__arrivals white"
                         : "header-navigation__arrivals"} >
                         Arrivels</button></Link>
             </div>
-
         </header>
     );
 };
-
 
 const mapState = state => {
     return {

@@ -35,14 +35,17 @@ function Departures({
     }, []);
 
     return (
-        <div className="main">
-            <FlyghtNav search={search} data={delimited.data}/>
-            <FlyghtList search={search} time={location === '/departures'
-                ? departer(delimited.data, listTodayDeparture, listTommorowDeparture, ListYesterdayDeparture)
-                : arrivel(delimited.data, ListTodayArrivel, ListTomorrowArrivel, ListYesterdayArrivel)} />
-        </div>
+        <>
+            {location === "/" ? <span className="notChoose">Please Choose</span> :
+                <div className="main">
+                    <FlyghtNav search={search} data={delimited.data} />
+                    <FlyghtList search={search} time={location === '/departures'
+                        ? departer(delimited.data, listTodayDeparture, listTommorowDeparture, ListYesterdayDeparture)
+                        : arrivel(delimited.data, ListTodayArrivel, ListTomorrowArrivel, ListYesterdayArrivel)} />
+                </div>
+            }
+        </>
     )
-
 };
 
 const mapState = state => {
