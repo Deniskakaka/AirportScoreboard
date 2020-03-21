@@ -1,0 +1,107 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+
+	&__logo {
+		font-size: 80px;
+		text-transform: uppercase;
+	}
+}
+
+.search{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-search {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&__input {
+		width: 400px;
+		height: 50px;
+        padding: 10px;
+        border: none;
+	}
+	&__icon {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 50px;
+		height: 50px;
+	}
+	&__button {
+		padding: 20px 30px;
+		padding-right: 50px;
+		height: 71px;
+		background-color: deepskyblue;
+		font-size: 26px;
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-top-right-radius: 80px;
+		transition: all 0.8s ease;
+		outline: none;
+
+		&:hover {
+			border-top-right-radius: 35px;
+			transition: all 0.8s ease;
+		}
+	}
+}
+
+.header-navigation {
+	width: 1000px;
+	height: 69px;
+	background-color: deepskyblue;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	margin-top: 35px;
+
+	&__departures {
+		width: 50%;
+		padding: 20px 0px;
+		border-top-left-radius: 50px;
+		background-color: deepskyblue;
+		border: none;
+		outline: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 25px;
+	}
+
+	&__arrivals {
+		width: 50%;
+		padding: 20px 0px;
+		border-top-right-radius: 50px;
+		background-color: deepskyblue;
+		border: none;
+		outline: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 25px;
+	}
+}
+
+input[placeholder] {
+	font-size: 30px;
+	padding-left: 20px;
+}
+
+.white {
+    width: 50%;
+    padding: 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: white;
+    border: none;
+    outline: none;
+    color: deepskyblue;
+    text-transform: uppercase;
+    font-size: 25px;
+	opacity: 1;
+}
