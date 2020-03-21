@@ -66,8 +66,7 @@ function Head({ text, moveText, moveSearchText }) {
 
 const mapState = state => {
     return {
-        text: state.head.text,
-        time: state.head.time
+        text: state.head.text
     }
 }
 
