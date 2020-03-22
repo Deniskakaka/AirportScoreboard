@@ -5,6 +5,7 @@ import moment from 'moment';
 import qs from 'qs';
 
 function FlyghtNav ({ search, data }) {
+    
     let yesterday = qs.stringify({ 'data': moment().add(-1, 'days').format('DD-MM-YYYY'), 'search': search }, { encode: false });
     let today = qs.stringify({ 'data': moment().format('DD-MM-YYYY'), 'search': search }, { encode: false });
     let tomorrow = qs.stringify({ 'data': moment().add(1, 'days').format('DD-MM-YYYY'), 'search': search }, { encode: false });
