@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { useLocation } from "react-router";
+import PropTypes from 'prop-types';
 import './main.scss'
 
 function FlyghtList({ search, time }) {
@@ -39,5 +40,10 @@ function FlyghtList({ search, time }) {
         </div>
     )
 }
+
+FlyghtList.propTypes = {
+    search: PropTypes.string,
+    time: PropTypes.array
+};
 
 export default FlyghtList;

@@ -7,7 +7,6 @@ import {
 import thunk from 'redux-thunk';
 import headReducer from './redux/fly.reducer.js';
 
-
 const reducer = combineReducers({
 	head: headReducer,
 });

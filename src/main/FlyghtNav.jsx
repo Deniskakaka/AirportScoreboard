@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from "react-router";
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import qs from 'qs';
 
@@ -14,7 +15,7 @@ function FlyghtNav ({ search, data }) {
     return (
         <div className="navOfTime">
         <Link
-            className={ data === moment().add(-1, 'days').format('DD-MM-YYYY') ? "yesterday borderBlue" : "yesterday"}
+            className={data === moment().add(-1, 'days').format('DD-MM-YYYY') ? "yesterday borderBlue" : "yesterday"}
             to={{
                 pathname: location,
                 search: yesterday
@@ -32,7 +33,7 @@ function FlyghtNav ({ search, data }) {
             <span className="today__name">Today</span>
         </Link>
         <Link
-            className={ data === moment().add(1, 'days').format('DD-MM-YYYY') ? "tommorow borderBlue" : "tommorow"}
+            className={data === moment().add(1, 'days').format('DD-MM-YYYY') ? "tommorow borderBlue" : "tommorow"}
             to={{
                 pathname: location,
                 search: tomorrow
@@ -42,6 +43,11 @@ function FlyghtNav ({ search, data }) {
         </Link>
     </div>
     )
+};
+
+FlyghtNav.propTypes = {
+    search: PropTypes.string,
+    data: PropTypes.string
 };
 
 export default FlyghtNav;
