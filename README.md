@@ -8,7 +8,7 @@
 <h2>The tech stack is:</h2>
 
 <ol>
-  <li>HTML<a>https://ru.wikipedia.org/wiki/HTML</a></li>
+  <li><a>https://ru.wikipedia.org/wiki/HTML</a></li>
    <li>SCSS(SASS)</li>
    <li></li>
    <li></li>
