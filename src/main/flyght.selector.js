@@ -5,7 +5,7 @@ export const ListTodayDeparture = (state) => {
 		(i) =>
 			moment().format(`YYYY-MMMM-DD`) ===
 			moment(i.timeDepShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
 
 export const ListTomorrowDeparture = (state) => {
@@ -13,7 +13,7 @@ export const ListTomorrowDeparture = (state) => {
 		(plane) =>
 			moment().add(1, 'days').format(`YYYY-MMMM-DD`) ===
 			moment(plane.timeDepShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
 
 export const ListYesterdayDeparture = (state) => {
@@ -21,7 +21,7 @@ export const ListYesterdayDeparture = (state) => {
 		(plane) =>
 			moment().add(-1, 'days').format(`YYYY-MMMM-DD`) ===
 			moment(plane.timeDepShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
 
 export const ListTodayArrivel= (state) => {
@@ -29,7 +29,7 @@ export const ListTodayArrivel= (state) => {
 		(plane) =>
 			moment().format(`YYYY-MMMM-DD`) ===
 			moment(plane.timeArrShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
 
 export const ListTomorrowArrivel = (state) => {
@@ -37,7 +37,7 @@ export const ListTomorrowArrivel = (state) => {
 		(i) =>
 			moment().add(1, 'days').format(`YYYY-MMMM-DD`) ===
 			moment(i.timeArrShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
 
 export const ListYesterdayArrivel= (state) => {
@@ -45,5 +45,5 @@ export const ListYesterdayArrivel= (state) => {
 		(i) =>
 			moment().add(-1, 'days').format(`YYYY-MMMM-DD`) ===
 			moment(i.timeArrShedule).format(`YYYY-MMMM-DD`)
-	).sort((a, b) =>{ if (b.timeToStand > a.timeToStand) {return -1} }) : []
+	).sort((a, b) =>{ if (moment(b.timeToStand).format('HH-mm') > moment(a.timeToStand).format('HH-mm')) {return -1} }) : []
 };
