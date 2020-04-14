@@ -16,5 +16,3 @@
 
 <h2>Link<h2>
   [Airport Scoreboard]('https://awesome-noyce-90a83b.netlify.com/')
-
-    npm i 
