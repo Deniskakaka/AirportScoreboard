@@ -6,7 +6,7 @@ import './main.scss'
 
 function FlyghtList({ search, time }) {
     let location = useLocation().pathname;
-
+    console.log(time)
     return (
         <div className="conteyner">
             {time !== undefined ? time.filter(i => search !== ''
@@ -29,10 +29,10 @@ function FlyghtList({ search, time }) {
                         </span>
                         <span className="list__nameAirCompany">
                             <div className="list__nameAirCompany__logo">
-                                {i.codeShareData.map(i => <img src={`${i.airline.en.logoSmallName}`} />)}
+                                {i.airline !== undefined ? <img src={`${i.airline.en.logoSmallName}`} /> : 'not logo'}
                             </div>
                             <div className="list__nameAirCompany__name">
-                                {i.codeShareData.map(i => <span>{i.airline.en.name}</span>)}
+                                {i.airline !== undefined ? <span>{i.airline.en.name}</span> : 'not name'}
                             </div>
                         </span>
                         <span className="list__numberFly">{`${i['carrierID.IATA']}${i.fltNo}`}</span>
