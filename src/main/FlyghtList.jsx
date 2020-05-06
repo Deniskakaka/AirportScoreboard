@@ -11,7 +11,7 @@ function FlyghtList({ search, time }) {
         <div className="conteyner">
             {time !== undefined ? time.filter(i => search !== ''
                 ? `${i['carrierID.IATA']}${i.fltNo}` === search : i).length === 0
-                ? <div className="notFound">Not Found</div>
+                ? <div className="loader"></div> 
                 : time.filter(i => search !== '' ? `${i['carrierID.IATA']}${i.fltNo}` === search : i).map(i =>
                     <li className="list" key={i.ID}>
                         <div className={i.term === 'D' ? "list__terminal blue" : "list__terminal"}>{i.term}</div>
